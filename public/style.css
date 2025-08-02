@@ -1,0 +1,206 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; 
+    overscroll-behavior: none; 
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;    
+    -ms-user-select: none;
+    scrollbar-width: none;     
+}
+
+.nav{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    width: 100vw;
+    position:fixed;
+    flex-wrap: nowrap;
+    overflow:hidden; 
+    justify-content: space-between;
+}
+.left{
+    display: flex;
+    align-items: center;
+}
+.left img{
+    height: 2.3rem;
+    margin: 1rem 1rem 0.8rem 1.5rem;
+}
+.home {
+    color: white;
+    border-radius: 55%;
+    background-color: rgb(55, 53, 53);
+    padding: 0.5rem 0.8rem;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative; 
+}
+
+.tooltip-text {
+    position: fixed; 
+    background-color: #333;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: small;
+    font-weight: 200;
+    top: 4rem; 
+    transform: translateX(-29%);
+    transition: opacity 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+.home:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.home:hover {
+    border: 1px solid white;
+}
+@media (max-width: 930px) {
+ .home{
+    margin-left: 0;
+ }
+}
+.input{
+    background-color: rgb(36, 36, 36);
+    margin: 0.5rem 0 0 0.6rem;
+    padding: 0.4rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgb(55, 52, 52); 
+    opacity: 0.9;
+    outline: none;
+}
+.input:hover{
+    background-color:rgb(45, 45, 45) ;
+    opacity: 1;
+    border-width: 2px;
+    box-sizing: border-box;
+}
+.focus{
+    background-color:rgb(45, 45, 45) ;
+    border: 2px solid white;
+    opacity: 1;
+}
+
+.input .search{
+  background-color: transparent;
+  color: white;
+  padding: 0.3rem;
+  font-size: x-large;
+}
+#searchBar{
+    color: white; 
+    margin: 0 0.7rem 0 0.7rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    transition: width 0.1s ease;
+    width: clamp(5rem, 30vw, 23rem);
+}
+
+.browser{
+ padding: 0.6rem;
+ color: white;
+ opacity: 0.6;
+}
+.right{
+    display: flex;
+    align-items: center;
+    color: white; 
+    
+}
+@media (max-width: 1200px) {
+  .nav .right .premium{
+    display: none;
+  }
+}
+
+.premium{
+    display: flex;
+    border-right: 1px solid rgb(85, 84, 84);
+    height: 2rem;
+    padding: 0 1rem 0 0;
+    margin-top: 0.5rem;
+}
+.premium p{
+    padding: 0.2rem;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: transform 0.2s ease;
+    
+}
+.premium p:hover{
+   transform: scale(1.05);
+   color: white;
+   opacity: 1;
+}
+.install{
+    margin: 0.5rem 1.8rem 0 2rem;
+    opacity: 0.7;
+    transition: transform 0.2s ease;
+    min-width: 6rem;
+}
+.install:hover{
+    transform: scale(1.03);
+    opacity: 1;
+}
+.signup{
+    opacity: 0.7;
+    transition: transform 0.2s ease;
+    min-width: 4.5rem;
+    margin-top: 0.5rem;
+}
+.signup:hover{
+      transform: scale(1.03);
+      opacity: 1;
+}
+.login{
+    background-color: white;
+    color: black;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    margin: 0.5rem 0 0 0.8rem;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+.login:hover{
+   transform: scale(1.03);
+   opacity: 0.9;
+}
+.fake{
+    background-color: black;
+    height: 65px;
+}
+
+@media (max-width: 950px) {
+ .side-container{
+    display: none;
+  }
+  .main-container{
+    width: 100vw;
+  }
+}
+
+.Container{
+    display: flex;
+    background-color: #000;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+

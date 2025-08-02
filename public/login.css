@@ -1,0 +1,100 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 25rem;
+  height: 33rem;
+  transform: translate(-50%, -50%);
+  background-color: rgba(211, 206, 206, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  border-radius: 10px;
+  background: linear-gradient(to top, rgb(31,31,31), black);
+}
+@media (max-width:550px){
+    .modal{
+        width: 100%;
+    }
+}
+.login-box{
+    text-align: center;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginInto{
+ margin-top: 3rem;
+ color: white;
+ width: 14rem;
+}
+.loginInto img{
+    width: 36px;
+}
+.formDiv{
+  width: 14rem;
+}
+.formDiv input{
+    text-align: center;
+    display: block;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(128, 0, 128,0.5) ;
+    outline: none;
+    color: white;
+    padding: 20px 30px 0 30px;
+}
+
+.f-btn{
+    background-color: rgb(86, 205, 86);
+    margin-top: 10px;
+    font-size:large;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 5rem 0.5rem 5rem;
+   
+}
+.f-btn:hover{
+    background-color: rgba(128, 255, 128, 0.8);
+    transform: scale(1.03);
+}
+.hidden {
+  display: none;
+}
+
+/* Blur effect */
+.blurred {
+  filter: blur(20px);
+}
+.Sign-upGreen:hover{
+   color: rgb(1, 255, 1);
+}
+.Sign-upGreen{
+    color: white;
+    text-decoration: none;
+}
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background: transparent;
+}
+.invalid{
+    font-weight: 200;
+    font-size: small;
+}
+
+.remove-btn{
+  position: absolute;
+  top: 3%;
+  left: 92%;
+  opacity: 0.6;
+  color: white;
+}
+

@@ -1,0 +1,22 @@
+.flash, .flash-message {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 94px;
+  background-color: #1DB954;
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  z-index: 9999;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+.flash-message.error {
+  background-color: #e74c3c;
+}
+.flash.show, .flash-message.show {
+  top: 5rem;
+  opacity: 1;
+}

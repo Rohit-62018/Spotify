@@ -1,0 +1,24 @@
+<div class="remove-Signup remove-btn"><i  class="fa-solid fa-xmark"></i></div>
+<div class="login-box">
+  <div class="loginInto">
+    <img src="Logo/logo.png" alt="">
+    <h2><b>Sign up to</b> </h2> 
+    <h2><b>start listening</b></h2>
+  </div>
+<hr style="color: rgba(255, 255, 255,0.6); margin-bottom: 3rem;">
+  <div class="formDiv">
+    <form  action="/api/signup" method="post" id="singupForm" class="needs-validation" novalidate>
+        <div class="input-div"><input id="username" type="text" placeholder="Username" name="username" required  autocomplete="off"/></div>
+        <div class="invalid"></div>
+        <input id="email" type="text" placeholder="Email" name="email" required  autocomplete="off"/> 
+        <div style="height: 4rem; ">
+          <input type="password" placeholder="Password" name="password" required autocomplete="off" />
+          <div class="invalid-feedback" style="height: 1rem;">insert correct password</div>
+        </div>
+        <button type="submit" id="signup-Btn" class="f-btn">Continue</button>
+    </form>
+  </div>
+  <div style="margin-top: 2rem; color: rgba(255, 255, 255,0.6);">
+    Already have an account? <a href="" class="Sign-upGreen">Login</a>
+  </div>
+</div>

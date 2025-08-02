@@ -1,0 +1,113 @@
+.main-container{
+    right: 0;
+    background: linear-gradient(to top, rgb(5 ,5 ,5), rgba(34, 34, 34, 1));
+    height: 80.5vh;
+    flex: 1;
+    overflow: scroll;
+    margin-top: 0.5rem;
+    border-radius: 13px;
+}
+
+.main-container .title{
+   display: flex;
+   margin: 2rem 2.8rem 1rem 2.5rem;
+   justify-content: space-between;
+   align-items: end;
+   color: white;
+}
+
+.main-container h3{
+    font-weight: 400;
+}
+
+.title p{
+    opacity: 0.7;
+    margin-bottom: 7px;
+}
+
+.trending{
+    margin-left: 1.7rem;
+    height: max-content;
+    display: flex;
+    overflow-x: scroll;
+    -ms-overflow-style: none;    /*IE and Edge */
+    scroll-behavior: smooth;
+   /* scrollbar-width: none;   fire fox*/
+   /* overscroll-behavior-x: contain; */
+   overscroll-behavior-y:auto;
+}
+
+.trending::-webkit-scrollbar {
+  display: none; 
+}
+.card{
+    border-radius: 10px;
+    overflow: hidden;
+    height: max-content;
+    color: white;
+    background-color: transparent;
+    border: none;
+    flex-shrink: 0;
+    width: 193px;
+}
+.card:hover{
+  background: linear-gradient(to top, rgb(31,31,31), transparent);
+}
+.card img{
+    width: 193px;
+    padding: 0.8rem;
+   border-radius: 1.3rem;
+}
+#song-name{
+    font-size:17px;
+    font-weight: 200;
+    margin: 0 0 0 0.8rem;
+}
+#song-name:hover{
+   text-decoration: underline;
+}
+#singer-name{
+    font-size:14px;
+    font-weight: 200;
+    margin: 0;
+    opacity: 0.7;
+    margin: 0 0 0 0.8rem;
+    padding-bottom: 0.8rem;
+}
+#singer-name:hover{
+   text-decoration: underline;
+}
+
+#singername:hover{
+    text-decoration: underline;
+}
+.artist{
+    margin-left: 1.7rem;
+    height: max-content;
+    display: flex;
+    overflow-x: scroll;
+    -ms-overflow-style: none;    /*IE and Edge */
+    scroll-behavior: smooth;
+    scrollbar-width: none;    /*fire fox */
+   /* overscroll-behavior-x: contain; */
+   overscroll-behavior-y:auto;
+}
+.artistcard{
+     border-radius: 10px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    flex-shrink: 0;
+    width: 193px;
+    text-align: center;
+}
+.artistcard  img{
+    width: 193px;
+    height: 193px;
+    padding: 0.8rem;
+   border-radius: 50%;
+
+}
+.artistcard:hover{
+    background: linear-gradient(to top, rgb(31,31,31), transparent);
+}

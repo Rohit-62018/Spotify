@@ -1,0 +1,125 @@
+.side-container{
+    height: 80.5vh;
+    width: 260px;
+    min-width: 50px;
+    max-width: 400px;
+    background-color: rgb(18,18,18);
+    border-radius:13px ;
+    margin: 0.4rem;
+    box-sizing: border-box;
+    position: relative;
+}
+.resizer {
+  width: 2px;
+  background: #666;
+  cursor: grab; /* default */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.side-container h6{
+    color: white;
+    padding: 1.5rem 0 0.5rem 1.5rem;
+    font-weight:bold;
+}
+.createPlayList{
+    width: 92%;
+    max-height: 610px;
+    background-color: rgb(33,33,33);
+    border-radius: 10px;
+    margin: 1.6rem 0 1rem 0.6rem;
+    padding: 0.7rem 0 0 0.8rem;
+    color: white;
+    scrollbar-width: none;
+    overflow: hidden;
+}
+.iteam1{
+  font-size:17px;
+    padding: 0.2rem;
+}
+.iteam2{
+    opacity: 0.9;
+    font-weight: 200;
+    font-size:14px;
+    padding: 0.2rem;
+}
+.trash-aline{
+  display: flex;
+}
+#trash{
+   display: inline;
+   text-align: center;
+   height: max-content;
+   margin: 0 0 0.2rem 2.2rem;
+   font-size: 1.5rem;
+   display: none;
+}
+#trash.show{
+  display: block;
+}
+
+#trash p{
+  font-size: small;
+}
+
+.createPlayList button{
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    height: 2rem;
+    padding: 0.2rem 0.6rem;
+    margin: 0.8rem 0 0.7rem 0.2rem;
+}
+.dropdown-icon{
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+.dropdown-icon.rotate {
+  transform: rotate(180deg);
+}
+.playlist-box {
+  max-height: 0;
+  overflow: scroll;
+  transition: max-height 0.4s ease;
+  scrollbar-width: none;
+}
+.playlist-box::-webkit-scrollbar {
+  display: none;
+}
+
+.playlist-box.show {
+  max-height: 420px;
+}
+
+.individual-song{
+ display: flex;
+ flex: 1;
+ overflow: hidden;
+}
+.sond-info{
+    display: flex;
+    flex-direction: column;
+    margin: 0.8rem 0.3rem 0.8rem 0.3rem;
+    flex: 1;
+}
+
+.eclips{
+   opacity: 0.8;
+   font-weight: 200;
+   font-size: smaller;
+}
+
+.sond-info p{
+    width: 7rem;
+    min-width: 90%;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;   
+}
+
+.playlist-img img{
+    width: 5rem;
+    padding: 0.4rem;
+    border-radius: 10px;
+}

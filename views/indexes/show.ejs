@@ -1,0 +1,31 @@
+<%- layout('layout/boilerplate') -%>
+
+<div class="flash success" ></div>
+<div class="Container blur" >
+    <% if (success && success.length > 0) { %>
+        <div class="flash-message success"><%= success[0] %></div>
+    <% } %>
+    <% if (error && error.length > 0) { %>
+            <div class="flash-message error"><%= error[0] %></div>
+    <% } %>
+
+  <div class="side-container"> <%- include('./playlist.ejs') -%>  <div class="resizer"></div> </div>
+  <div class="main-container" id="content"> <%- include('./songContent.ejs') -%> </div>
+ 
+</div>
+
+<div id="overlay" class="hidden"></div>  
+
+<!-- for Login -->
+<div id="loginModal" class="modal hidden">
+    <%- include('../partials/login.ejs') %>
+</div>
+
+<!-- for Sign Up -->
+<div id="signModal" class="modal hidden">
+    <%- include('../partials/signup.ejs') %>
+</div>
+
+
+
+

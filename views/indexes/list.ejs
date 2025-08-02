@@ -1,0 +1,51 @@
+<div class="list">
+    <div class="headList">
+
+      <img id="Img" src="<%= Url %>" crossorigin="anonymous">
+      <div class="Title"></div>
+     
+    </div>
+
+    <div class="info ">
+      <div class="titles">
+        <p># &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Title</p>
+      </div>
+      <div class="album">
+        <p>Album</p>  
+      </div>
+      <div class="duration-title">
+        <p><i class="fa-solid fa-clock"></i></p>  
+      </div>
+      <div class="add-Title">
+        <p>Add</p>  
+      </div>
+    </div>
+
+    <hr style="width:74vw; margin: 0 1.8rem 1rem 1.8rem; opacity: 0.9;">
+    <% let index = 1; %>
+    <% for(song of songs) {%>
+      <div class="songDiv" data-name='<%- song.name %>' data-album='<%- song.album.name %>' data-url='<%-song.downloadUrl[4].url%>'
+        data-image='<%- song.image[2].url %>' data-idx ="<%=index%>" >
+        <div class="count"> <%= index++ %></div>
+        <div class="imageDiv">
+          <img src="<%= song.image[2].url%>" loading="lazy" >
+          <div class="Info">
+            <h5 style="margin-bottom:0;" class="nameGreen"><%= song.name%></h5>
+            <p style="opacity: 0.7;">
+             <%= song.artists.primary.map(a => a.name).join(", ") %>
+            </p>
+          </div>
+        </div>
+        <div class="albumDiv">
+            <p ><%= song.album.name %></p>
+        </div>
+        <div class="duration">
+          <p class="Duration" data-duration="<%= song.duration %>"> </p>
+        </div>  
+        <div class="add-icon">
+            <i class="fa-solid fa-plus"></i>
+        </div>      
+      </div>
+    <%}%>
+</div>
+<%- include('./footerContent.ejs') %>

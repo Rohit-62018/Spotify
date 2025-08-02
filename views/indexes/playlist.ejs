@@ -1,0 +1,25 @@
+<h6>Music for everyone</h6>
+         <div class="createPlayList">
+            <p class="iteam1">Your Favourite</p>
+            <p class="iteam2">it's easy, we'll help you</p>
+              <div class="trash-aline">
+                <button class="toggle-playlist">Songs <i  class="fa-solid fa-chevron-down dropdown-icon"></i></button>
+                <div class="delete-zone" id="trash">
+                    🗑️<br> <p>Drag to delete</p>
+                </div>
+              </div>
+            <div class="playlist-box">
+          <% if (songData && songData.playlist.length > 0) { %>
+                <% songData.playlist.forEach(song => { %>
+                  <div class="individual-song" draggable="true" data-image='<%-song.image%>' data-url='<%-song.url%>'
+                     data-album='<%-song.album%>' data-name='<%-song.name%>' data-id="<%-song._id%>">
+                    <div class="playlist-img"><img src='<%=song.image%>' alt=""></div>
+                    <div class="sond-info">
+                      <div><p id="greenName-Green"><%= song.name %></p></div>
+                      <div class="eclips" ><p><%= song.album %></p></div>
+                    </div>
+                  </div>
+                <% }) %>
+          <% } %>
+        </div>
+    </div>
