@@ -80,6 +80,7 @@ formSubmit.addEventListener('click', async (e) => {
         if (result.valid === false) {
             flashMsg.textContent = 'Invalid username or password';
             view();
+
         } else {
             window.location.href = '/api';
         }

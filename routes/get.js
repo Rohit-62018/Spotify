@@ -4,8 +4,6 @@ const asyncwrap = require('../asyncwrap');
 const { Trend, Artist, Chart } = require('../models/songModle');
 const User = require('../models/user');
 
-
-
 const axios = require('axios');
 async function getSong(songName) {
     try {
