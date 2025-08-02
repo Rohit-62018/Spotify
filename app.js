@@ -65,7 +65,8 @@ app.use('/api', postRoutes);
 app.use((err, req, res, next) => {
     const status = err.status || 500;
     const message = err.message || 'Something went wrong';
-    res.status(status).json({ success: false, error: { message } });
+    req.flash('error',`${message}`)
+    res.status(status).redirect('/api');
 });
 
 app.listen(8080, () => {

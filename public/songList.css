@@ -1,4 +1,6 @@
-
+.list{
+    overflow: hidden;
+}
 .headList img{
    width: 16vw;
    margin: 1.6rem;
@@ -43,7 +45,6 @@ p{
     opacity: 0.8;
     width: 20px;
     text-align: center;
-    
 }
 .songDiv img{
     width: 3rem;

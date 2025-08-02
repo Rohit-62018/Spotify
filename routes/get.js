@@ -1,53 +1,77 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
+const asyncwrap = require('../asyncwrap');
+const { Trend, Artist, Chart } = require('../models/songModle');
 const User = require('../models/user');
-const PlayList = require('../models/playList');
 
-router.post('/addSong', async (req, res, next) => {
+// You may want to move this to a separate utility file
+const axios = require('axios');
+async function getSong(songName) {
     try {
-        const user = await User.findOne({ username: req.user.username });
-        const song = await PlayList.create(req.body);
-        user.playlist.push(song._id);
-        await user.save();
-        res.json({ added: true });
+        const url = `https://saavn.dev/api/search/songs?query=${encodeURIComponent(songName)}`;
+        const res = await axios.get(url);
+        return res.data.data.results || [];
     } catch (err) {
-        next(err);
+        console.log('Axios Error:', err.message);
+        return [];
     }
-});
+}
 
-router.post("/signup", async (req, res, next) => {
-    try {
-        const { username, email, password } = req.body;
-        const newUser = new User({ email, username });
-        const registeredUser = await User.register(newUser, password);
-        req.login(registeredUser, (err) => {
-            if (err) return next(err);
-            req.flash("success", "Account created");
-            res.redirect('/api');
-        });
-    } catch (err) {
-        next(err);
+router.get("/", asyncwrap(async (req, res) => {
+    const alltrend = await Trend.find();
+    const allArtist = await Artist.find();
+    const allCharts = await Chart.find();
+    let userData = null;
+
+    if (req.isAuthenticated()) {
+        userData = await User.findOne({ username: req.user.username }).populate("playlist");
     }
-});
 
-router.post('/login', (req, res, next) => {
-    passport.authenticate('local', (err, user) => {
+    res.render("indexes/show.ejs", { alltrend, allArtist, allCharts, songData: userData });
+}));
+
+router.get("/logout", (req, res, next) => {
+    req.logout((err) => {
         if (err) return next(err);
-        if (!user) return res.json({ valid: false });
-
-        req.logIn(user, (err) => {
-            if (err) return next(err);
-            res.json({ valid: true });
-        });
-    })(req, res, next);
+        req.flash("success", "Logout successfully");
+        res.redirect("/api");
+    });
 });
 
-router.delete('/delete/:id', async (req, res) => {
-    const { id } = req.params;
-    await User.findByIdAndUpdate(req.user._id, { $pull: { playlist: id } });
-    await PlayList.findByIdAndDelete(id);
-    res.json({ deleted: true });
+router.get('/check-username', async (req, res) => {
+    const { username } = req.query;
+    const exists = await User.findOne({ username });
+    res.json({ available: !exists });
+});
+
+router.get('/music', async (req, res) => {
+    const { q, Url } = req.query;
+    const songs = await getSong(q);
+    res.render('indexes/list.ejs', { songs, Url });
+});
+
+router.get('/search', async (req, res) => {
+    const { q } = req.query;
+    const songs = await getSong(q);
+    const Url = songs[0]?.image?.[2]?.url || "";
+    res.render('indexes/list.ejs', { songs, Url });
+});
+
+router.get('/search-check', async (req, res) => {
+    const { q } = req.query;
+    const songs = await getSong(q);
+    res.json({ available: songs.length > 0 });
+});
+
+router.get('/isAuthenticated', (req, res) => {
+    res.json({ valid: req.isAuthenticated() });
+});
+
+router.get('/home', async (req, res) => {
+    const alltrend = await Trend.find();
+    const allArtist = await Artist.find();
+    const allCharts = await Chart.find();
+    res.render('indexes/songContent.ejs', { alltrend, allArtist, allCharts });
 });
 
 module.exports = router;
