@@ -1,4 +1,5 @@
 const container = document.getElementById('content');  
+let SongList;
 
 async function loadSongs(songName,url){
         const encodeSongName = encodeURIComponent(songName);
@@ -6,9 +7,8 @@ async function loadSongs(songName,url){
         const response = await axios.get(`/api/music?q=${encodeSongName}&Url=${encodeurl}`) 
         contentInject(response.data);
 }
-let SongList;
+
 function contentInject(response){ 
-    
     try{
         container.innerHTML = response;
         setTimeout(()=>{
@@ -53,7 +53,8 @@ function formatAllDurations() {
         }
     });
 }
- function songObjreceiver(){
+
+function songObjreceiver(){
     document.querySelectorAll('.songDiv').forEach(songDiv=>{
         songDiv.addEventListener("click",()=>{
             const songData = {...songDiv.dataset};

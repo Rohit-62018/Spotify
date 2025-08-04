@@ -3,11 +3,13 @@ const previousSong = document.querySelector('.fa-backward-step');
 let songList;
 let currentIdx;
 
+nextSong.addEventListener('click',NextSong);
+previousSong.addEventListener('click',PreviousSong);
 
 // next song
-let NextSong = ()=>{
+function NextSong(){
     if(songList.length > currentIdx){
-        audioPlayer(songList[currentIdx++]);
+        audioPlayer(songList[++currentIdx - 1]);
         highlightCurrentSong(currentIdx);
         
     }else
@@ -15,14 +17,13 @@ let NextSong = ()=>{
 };
 
 // previous song
-let PreviousSong = ()=>{
-    if(currentIdx>0){
-        audioPlayer(songList[currentIdx--]);
+function PreviousSong(){
+    if(currentIdx > 1){
+        audioPlayer(songList[--currentIdx-1]);
         highlightCurrentSong(currentIdx);
     }
 };
-nextSong.addEventListener('click',NextSong);
-previousSong.addEventListener('click',PreviousSong);
+
 
 function extractSongsData(){
     const songElements = document.querySelectorAll('.songDiv');

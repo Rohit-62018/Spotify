@@ -88,10 +88,10 @@ async function audioPlayer(song){
 volume.addEventListener('change', () => {
     volumeIcon.style.opacity = 0.5;
 });
-  volume.addEventListener('input', () => {
-                    audio.volume = volume.value;
-                    document.getElementById('volumeIcon').style.opacity = 1;
-                });
+volume.addEventListener('input', () => {
+    audio.volume = volume.value;
+    document.getElementById('volumeIcon').style.opacity = 1;
+});
 // 00:00 Time
 function formatTime(seconds) {
     let min = Math.floor(seconds / 60);

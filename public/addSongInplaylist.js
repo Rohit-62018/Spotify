@@ -1,4 +1,4 @@
-// add song in playlist (DOM)
+// Extracting song data to add in playlist
 function addSong(){
     document.querySelectorAll('.add-icon').forEach(icon=>{
     icon.addEventListener('click',(e)=>{
@@ -13,7 +13,7 @@ function addSong(){
         }
         addsongInPlayList(songData);
         icon.style.border ='1px solid #43e326';
-        addNewelement(songData);
+        // addNewelement(songData);
     })
 })
 }
@@ -22,7 +22,7 @@ function addSong(){
 function addNewelement(newSong){
     const html = `<div class="individual-song" draggable="true"
     data-image="${newSong.image}" data-url="${newSong.url}"
-    data-album="${newSong.album}" data-name="${newSong.name}" data-id="${newSong.id}">
+    data-album="${newSong.album}" data-name="${newSong.name}" data-id="${newSong._id}">
     
     <div class="playlist-img"><img src='${newSong.image}' alt=""></div>
     <div class="sond-info">
@@ -31,7 +31,6 @@ function addNewelement(newSong){
     </div>
   </div>`;
   document.querySelector('.playlist-box').insertAdjacentHTML('beforeend', html);
-  
 }
 
 // Update new added song in DB
@@ -42,5 +41,8 @@ function addsongInPlayList(songData){
         body:JSON.stringify(songData)
     })
     .then((data)=>data.json())
+    .then(songInfo=>{
+        addNewelement(songInfo.song);
+    })
     .catch(err=>console.log(err));
 }
