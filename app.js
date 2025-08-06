@@ -31,7 +31,7 @@ mongoose.connect(Url)
 const storage =  MongoStore.create({
     mongoUrl: Url,
     crypto:{
-        secret:"superSecret"
+        secret:process.env.SECRET
     },
     touchAfter:24*3600
  })
@@ -42,7 +42,7 @@ const storage =  MongoStore.create({
  
 const sessionOption = {
     store: storage,
-    secret:"superSecret",
+    secret:process.env.SECRET ,
     resave: false,
     saveUninitialized: true,
     cookie: {

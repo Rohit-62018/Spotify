@@ -16,6 +16,10 @@
 }
 .c p{
   margin-left: 1rem;
+  width: 390px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .c p:hover{
   text-decoration: underline;
