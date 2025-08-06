@@ -10,13 +10,12 @@
   display: flex;
   align-items: center;
   height: 100%;
- 
   color: white;
   width: 400px;
 }
 .c p{
   margin-left: 1rem;
-  width: 280px;
+  width: 250px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -35,7 +34,8 @@
 .player{
     display: flex;
     height: 100%;
-    width: 47.5vw;
+    width: 650px;
+    min-width: 330px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -117,6 +117,7 @@
   }
   
 }
+
 .third{
   display: flex;
   justify-content: center;
