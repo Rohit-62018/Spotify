@@ -1,5 +1,5 @@
 {
-  "name": "spotify",
+  "name": "Vibetrack",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,11 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Spotify",
+  "author": "Vibetrack",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
     "axios": "^1.10.0",
+    "cloudinary": "^2.7.0",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^5.1.0",

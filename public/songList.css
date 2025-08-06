@@ -31,6 +31,8 @@ p{
 
 .songDiv{
     margin: 0 3rem 0 3rem;
+    min-width: 21cm;
+    overflow: hidden;
     display: flex;
     align-items: center;
     border-radius: 4px;

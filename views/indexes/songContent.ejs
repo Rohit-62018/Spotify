@@ -3,7 +3,7 @@
 </div>
 <div class="trending">
     <% for(trend of alltrend) {%>
-        <div class="card" onclick="loadSongs('<%=trend.itemName%>','<%=trend.image%>')" style="cursor: pointer;">
+        <div class="card" onclick="loadSongs('<%-trend.itemName-%>','<%-trend.image-%>')" style="cursor: pointer;">
             <img src="<%=trend.image%>" loading="lazy" alt="">
             <p id="song-name"><%=trend.itemName%></p>
             <p id="singer-name"><%=trend.singer%></p>
@@ -15,7 +15,7 @@
 </div>
 <div class="artist">
      <% for(artist of allArtist) {%>
-    <div class="artistcard" onclick="loadSongs('<%=artist.itemName%>','<%=artist.image%>')" style="cursor: pointer;">
+    <div class="artistcard" onclick="loadSongs('<%-artist.itemName-%>','<%-artist.image-%>')" style="cursor: pointer;">
         <img src="<%=artist.image%>" loading="lazy" alt="">
         <p id="singername"><%=artist.itemName%></p>
     </div>
@@ -26,7 +26,7 @@
 </div>
 <div class="trending" >
      <% for(chart of allCharts) {%>
-    <div class="card" onclick="loadSongs('<%=chart.itemName%>','<%=chart.image%>')" style="cursor: pointer;">
+    <div class="card" onclick="loadSongs('<%-chart.itemName-%>','<%-chart.image-%>')" style="cursor: pointer;">
         <img src="<%=chart.image%>" loading="lazy" alt="">
         <p id="song-name"><%=chart.itemName%></p>
         <p id="singer-name"><%=chart.singer%></p>

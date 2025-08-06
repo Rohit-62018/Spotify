@@ -1,14 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-
-async function main() {
-   await mongoose.connect("mongodb://127.0.0.1:27017/Spotify")
-}
-main()
-      .catch((e)=>console.log(e))
-  
-
 const trendingSchema = new Schema({
     image:String,
     itemName:String,

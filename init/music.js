@@ -4,7 +4,7 @@ const {Trend, Artist, Chart} = require('../models/songModle');
 
 
 async function main() {
-   await mongoose.connect("mongodb://127.0.0.1:27017/Spotify")
+   await mongoose.connect("mongodb+srv://rohitkumargiddi:e2uvLca7cElU2WHv@cluster0.fjlwgtf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 }
 
 main().then(()=>console.log("connected mongoose"))
@@ -12,9 +12,6 @@ main().then(()=>console.log("connected mongoose"))
   
 
 const initDB = async()=>{
-    await Trend.deleteMany({});
-    await Artist.deleteMany({});
-    await Chart.deleteMany({});
     await Trend.insertMany(initData.musicData);
     await Artist.insertMany(initData.artistData);
     await Chart.insertMany(initData.chartsData);

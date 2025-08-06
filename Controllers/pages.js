@@ -53,7 +53,7 @@ module.exports.SearchSong = async(req, res) => {
     res.render('indexes/list.ejs', { songs, Url });
 };
 
-module.exports.SearchSong = async (req, res) => {
+module.exports.SongExist = async (req, res) => {
     const { q } = req.query;
     const songs = await getSong(q);
     res.json({ available: songs.length > 0 });

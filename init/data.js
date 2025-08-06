@@ -6,8 +6,8 @@ module.exports.musicData = [
     { image: "https://staticimg.amarujala.com/assets/images/2025/05/14/hausafal-5_fb3832606597627dffca35d960ab2efc.jpeg?q=80&w=480&dpr=2.6", itemName: "Dil E Nadaan",singer: "Madhubanti Bagchi, Sumonto Mukherjee, Kumaar"},
     { image: "https://c.saavncdn.com/830/Laal-Pari-From-Housefull-5-Hindi-2025-20250512121009-500x500.jpg", itemName: "Laal Pari",singer:"Simar Kaur and Yo Yo Honey Singh" },
     { image: "https://c.saavncdn.com/546/Mi-Amor-Slowed-English-2023-20230110234625-500x500.jpg", itemName: "Mi Amore",singer:"Nelly Mes" },
-    { image: "https://a10.gaanacdn.com/gn_img/albums/koMWQ4B3qL/MWQD4VGk3q/size_m_1739509622.jpg", itemName: "Buddy",singer:"Yashraj Kapil" },
-    { image: "https://a10.gaanacdn.com/gn_img/albums/BZgWoOW2d9/gWo9EaavK2/size_m_1738580878.jpg", itemName: "Chahte Hain",singer:"Raghav Chaitanya & Shilpa Rao"},
+    { image: "https://i.scdn.co/image/ab67616d00001e0261a87b488a63f535d7ee351c", itemName: "KAKA Shape",singer:"KAKA" },
+    { image: "https://c.saavncdn.com/135/Aam-Jahe-Munde-Punjabi-2020-20240424043015-500x500.jpg", itemName: "Aam jahe Munde",singer:"Parmish Verma, Pradhaan"},
     { image: "https://www.shazam.com/mkimage/image/thumb/Music221/v4/fb/65/6b/fb656bde-774b-7b0f-7af5-4831e0dec0f8/cover.jpg/375x375cc.webp", itemName: "Maatikkinaaru Orutharu",singer:"Gana Apellow and Leon James"}
 ];
 module.exports.artistData = [
@@ -35,13 +35,4 @@ module.exports.chartsData = [
   ];
 
 
-  // { image: "", itemName: "http://aac.saavncdn.com/047/d1366530468931703ac909e82a3ee788_320.mp4" },
-    // { image: "https://i.scdn.co/image/ab67616d00001e026fbb60d6a7e03ccb940a518e", itemName: "http://aac.saavncdn.com/940/fa38d9248ccfcba17e2462f6559f65e8_320.mp4" },
-    // { image: "https://i.scdn.co/image/ab67616d0000b273d29a003b6e8d4c1c47bd4da4", itemName: "http://aac.saavncdn.com/957/0caa2e162d4030a6e9d6b2f3d6388a96_320.mp4" },
-    // { image: "https://pmstudio.com/pmstudio/images/Ed-Sheeran129.jpg", itemName: "http://aac.saavncdn.com/254/6f225c1059c4fe9456e36d1db0a6bbb4_320.mp4" },
-    // { image: "", itemName: "http://aac.saavncdn.com/658/af111d696dd8d70d20c8df9c620ce0af_320.mp4" },
-    // { image: "", itemName: "http://aac.saavncdn.com/658/394471f41f7d93240e7a829d882e6d69_320.mp4" },
-    // { image: "", itemName: "http://aac.saavncdn.com/051/249871fff26d5400e55170a94d1acf99_320.mp4" },
-    // { image: "", itemName: "http://aac.saavncdn.com/500/5534bff691709d5013ace91c3d8237b8_320.mp4" },
-    // { image: "", itemName: "https://aac.saavncdn.com/195/abb50966f560468151276bf06c057394_320.mp4" },
-    // { image: "", itemName: "http://aac.saavncdn.com/236/b43bde71cfe929a9f3dd9ba314876357_320.mp4" }
+ 
